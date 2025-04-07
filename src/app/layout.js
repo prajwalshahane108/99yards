@@ -2,6 +2,14 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css"; // ✅ Ensure global styles are applied
 import { Metadata } from "next"; // ✅ Use Next.js metadata for SEO
 
+import {
+  proximaNovaAltThin,
+  proximaNovaBold,
+  proximaNovaSemibold,
+  proximaNovaThin,
+  proximaNovaRegular
+} from '@/app/fonts';
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,11 +31,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`
+      ${proximaNovaAltThin.variable} 
+      ${proximaNovaBold.variable} 
+      ${proximaNovaSemibold.variable}
+      ${proximaNovaThin.variable}
+      ${proximaNovaRegular.variable}
+    `}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         {children}  
       </body>
     </html>

@@ -128,7 +128,7 @@ export default function Navbar() {
           backgroundColor: "#FFFFFF",
           color: "black",
           boxShadow: "none",
-          height: { xs: "80px", md: "120px" },
+          height: { xs: "80px", md: "105px" },
           justifyContent: "center",
         }}
       >
@@ -146,8 +146,8 @@ export default function Navbar() {
             <div
               style={{
                 position: "relative",
-                width: "115px",
-                height: "55px",
+                width: "120px",
+                height: "60px",
                 cursor: "pointer",
               }}
               onClick={() => router.push("/")}
@@ -172,9 +172,9 @@ export default function Navbar() {
                 onClick={() => router.push(item.path)}
                 sx={{
                   cursor: "pointer",
-                  color: "#2d2d2d",
-                  fontSize: "14px",
-                  fontWeight: 600,
+                  color: "#352F36",
+                  fontSize: "16px",
+                  fontWeight: 700,
                   padding: "8px 16px",
                   marginRight: item.name === "Teach on 99 Academy" ? "16px" : "0",
                   "&:hover": {
@@ -190,16 +190,16 @@ export default function Navbar() {
             <Button
               variant="outlined"
               sx={{
-                color: "#2d2d2d",
+                color: "#352F36",
                 borderRadius: "10px",
                 textTransform: "none",
-                fontWeight: 600,
-                fontSize: "14px",
+                fontWeight: 700,
+                fontSize: "16px",
                 padding: "12px 12px",
-                border: "2px solid #2d2d2d",
-                marginRight: "12px",
+                border: "1px solid #352F36",
+                marginRight: "10px",
                 "&:hover": {
-                  borderColor: "#d0d0d0",
+                  borderColor: "#000000",
                   backgroundColor: "#f5f5f5",
                 },
               }}
@@ -212,11 +212,12 @@ export default function Navbar() {
             <Button
               variant="contained"
               sx={{
-                backgroundColor: "#2d2d2d",
+                backgroundColor: "#352F36",
                 borderRadius: "10px",
                 textTransform: "none",
-                fontWeight: 600,
-                fontSize: "14px",
+                fontWeight: 700,
+                fontSize: "16px",
+                marginRight: "12px",
                 padding: "12px 15px",
                 "&:hover": {
                   backgroundColor: "#404040",

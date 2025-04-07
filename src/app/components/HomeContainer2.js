@@ -42,20 +42,21 @@ export default function FashionWaitlistSection() {
             sx={{
               fontWeight: 700,
               color: "#333",
-              mb:0.4,
-              fontSize: { xs: "1.75rem", sm: "2rem", md: "1.7rem" },
+              mb: 0.4,
+              fontSize: { xs: "1.75rem", sm: "2rem", md: "2rem" },
             }}
           >
-            Ignite your fashion passion. Learn without limits, excel without expenses.
+            Ignite your fashion passion. Learn without limits, excel without
+            expenses.
           </Typography>
           <Typography
-            variant="h4"
-            component="h3"
+            variant="h2"
+            component="h2"
             sx={{
-              fontWeight: 600,
+              fontWeight: 700,
               color: "#333",
               mb: 4,
-              fontSize: { xs: "1.5rem", sm: "1.75rem", md: "1.7rem" },
+              fontSize: { xs: "1.5rem", sm: "1.75rem", md: "2rem" },
             }}
           >
             Your dream career starts here.
@@ -67,51 +68,69 @@ export default function FashionWaitlistSection() {
             sx={{
               display: "flex",
               width: "100%",
-              maxWidth: "600px",
-              gap: 3,
+              maxWidth: "650px",
+              gap: 2,
               mt: 1,
             }}
           >
             <TextField
               fullWidth
               placeholder="Enter your email"
+              variant="outlined"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               sx={{
                 backgroundColor: "white",
-                borderRadius: "4px",
-                height: "56px",
+                borderRadius: "12px",
+                border: "none",
+                "&:hover": {
+                  border: "none",
+                },
+                "& .MuiInputBase-root": {
+                  borderRadius: "12px",
+                  border: "none",
+                },
+                height: "50px",
                 "& .MuiOutlinedInput-root": {
-                  height: "56px",
+                  height: "50px",
+                  borderColor: "#fff",
+                  border: "none",
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#fff",
+                  },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#fff",
+                  },
+                  borderRadius: "12px",
                 },
                 "& .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "#e0e0e0",
+                  borderColor: "#fff",
+                  borderRadius: "12px",
                 },
               }}
               InputProps={{
                 sx: {
                   color: "#555",
                   fontSize: "1rem",
-                  "&::placeholder": {
-                    color: "#888",
-                    opacity: 0.8,
+                  "& input::placeholder": {
+                    color: "#9E9E9E", // Change this to your desired placeholder color
+                    opacity: 1, // This ensures the color is fully visible
                   },
                 },
               }}
             />
             <Button
               type="submit"
-              variant="contained"
               sx={{
-                backgroundColor: "#333",
+                backgroundColor: "#352F36",
                 color: "white",
                 height: "50px",
-                width: "166px",
+                width: "136px",
                 borderRadius: "8px",
                 // padding: "0 1px",
                 fontWeight: 600,
                 textTransform: "none",
-                fontSize: { xs: "0.875rem", sm: "1rem", md: "0.9rem" },
+                fontSize: { xs: "0.875rem", sm: "1rem", md: "1rem" },
                 boxShadow: "none",
                 "&:hover": {
                   backgroundColor: "#444",

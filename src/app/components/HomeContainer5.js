@@ -15,49 +15,49 @@ export default function CategoriesSection() {
   const categories = [
     {
       title: "Business Planning",
-      image: "/fashion-designer.png",
+      image: "/bp.jpg",
       description:
         "Establish your fashion venture with a solid sales forecast, tailored to the competitive US market. We guide you through market research, branding, and financial planning.",
     },
     {
       title: "Manufacturing & Sourcing",
-      image: "/fashion-designer.png",
+      image: "/machine.jpg",
       description:
         "Navigate the complexities of manufacturing and sourcing with our expert guidance, ensuring quality and ethical practices.",
     },
     {
       title: "Merchandising & Assortment Planning",
-      image: "/fashion-designer.png",
+      image: "/clothes.jpg",
       description:
         "Master the art of product selection and presentation to optimize sales and customer appeal with our expert guidance.",
     },
     {
       title: "Sales Channel Planning & Setup",
-      image: "/fashion-designer.png",
+      image: "/sales.jpg",
       description:
         "Navigate the complexities of manufacturing and sourcing with our expert guidance, ensuring quality and ethical practices.",
     },
     {
       title: "Brand Development",
-      image: "/fashion-designer.png",
+      image: "/brand.jpg",
       description:
         "Create a visually stunning identity that resonates with your target audience. From logo design to storytelling, we make your brand unforgettable.",
     },
     {
       title: "Product Design & Development",
-      image: "/fashion-designer.png",
+      image: "/product.png",
       description:
         "Navigate the complexities of manufacturing and sourcing with our expert guidance, ensuring quality and ethical practices.",
     },
     {
       title: "End-To-End Process Design & Optimization",
-      image: "/fashion-designer.png",
+      image: "/end.png",
       description:
         "Navigate the complexities of manufacturing and sourcing with our expert guidance, ensuring quality and ethical practices.",
     },
     {
       title: "Supply Chain",
-      image: "/fashion-designer.png",
+      image: "/chain.jpg",
       description:
         "Navigate the complexities of manufacturing and sourcing with our expert guidance, ensuring quality and ethical practices.",
     },
@@ -65,14 +65,15 @@ export default function CategoriesSection() {
 
   return (
     <Box sx={{ py: 8, backgroundColor: "#f7f5f1" }}>
-     <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 4, md: 9.9 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 4, md: 9.9 } }}>
         <Typography
           variant="h3"
           component="h1"
           sx={{
             fontWeight: 900,
             mb: 5,
-            color: "#333",
+            color: "#352F36",
+            fontSize: { xs: "2rem", md: "3rem" },
           }}
         >
           Categories
@@ -85,7 +86,7 @@ export default function CategoriesSection() {
                 elevation={0}
                 sx={{
                   backgroundColor: "#FFF",
-                  height: "100%",
+                  height: "456px",
                   borderRadius: "8px",
                   overflow: "hidden",
                   boxShadow: "none",
@@ -99,6 +100,7 @@ export default function CategoriesSection() {
                   alt={category.title}
                   sx={{
                     mb: 2,
+                    color: "#352F36",
                   }}
                 />
                 <CardContent sx={{ p: 0 }}>
@@ -107,9 +109,11 @@ export default function CategoriesSection() {
                     component="h3"
                     sx={{
                       fontWeight: 800,
-                      mb: 1,
-                      color: "#333",
+                      mb: 2 ,
+                      color: "#352F36",
                       padding: "0px 20px",
+                      fontSize: "20px",
+                      lineHeight: 1.2,
                     }}
                   >
                     {category.title}
@@ -117,8 +121,8 @@ export default function CategoriesSection() {
                   <Typography
                     variant="body2"
                     sx={{
-                      color: "#333",
-                      fontSize: "0.875rem",
+                      color: "#352F36",
+                      fontSize: "1rem",
                       lineHeight: 1.5,
                       padding: "0px 18px",
                     }}

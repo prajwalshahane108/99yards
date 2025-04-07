@@ -10,11 +10,7 @@ import HomeContainer8 from "../../components/HomeContainer8";
 import HomeContainer9 from "../../components/HomeContainer9";
 import HomeContainer10 from "../../components/HomeContainer10";
 import HomeContainer11 from "../../components/HomeContainer11";
-import HomeContainer12 from "../../components/HomeContainer12";
-// import HomeContainer13 from "../../components/HomeContainer13";
-// import HomeContainer14 from "../../components/HomeContainer14";
-// import HomeContainer15 from "../../components/HomeContainer15";
-// import Footer from "../../components/Footer";
+import Footer from "../../components/Footer";
 
 export default function LandingPage() {
   return (
@@ -31,12 +27,7 @@ export default function LandingPage() {
       <HomeContainer9 />
       <HomeContainer10 />
       <HomeContainer11 />
-      <HomeContainer12 />
-      {/* <HomeContainer13 /> */}
-      {/* <HomeContainer14 /> */}
-      {/* <HomeContainer15 /> */}
-
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

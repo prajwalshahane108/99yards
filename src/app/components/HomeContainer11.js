@@ -10,7 +10,7 @@ export default function FashionCTABanner() {
       sx={{
         width: "100%",
         py: 8,
-        backgroundColor: "#f7f5f1",
+        backgroundColor: "#EAE4D6",
       }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 4, md: 10 } }}>
@@ -21,13 +21,13 @@ export default function FashionCTABanner() {
               sx={{
                 position: "relative",
                 width: "100%",
-                height: "280px",
+                height: "290px",
                 borderRadius: "8px",
                 overflow: "hidden",
               }}
             >
               <Image
-                src="/fashion-designer.png"
+                src="/world.jpg"
                 alt="Fashion professionals using mobile devices"
                 fill
                 style={{
@@ -43,34 +43,47 @@ export default function FashionCTABanner() {
           <Grid item xs={12} md={6}>
             <Box>
               <Typography
-                variant="h3"
-                component="h2"
+                // variant="h3"
+                // component="h2"
                 sx={{
-                  fontWeight: 700,
+                  fontWeight: 900,
                   mb: 1,
                   mt: 2,
                   color: "#333",
-                  fontSize: { xs: "2rem", md: "2.5rem" },
-                  lineHeight: 1.2,
+                  fontSize: { xs: "2rem", md: "3rem" },
+                  lineHeight: 1.1,
                 }}
               >
                 Ready to redefine the{" "}
                 <Box
                   component="span"
-                  sx={{ color: "#B02A37", display: "inline" }}
+                  sx={{
+                    color: "#B02A37",
+                    display: "inline",
+                    fontWeight: 700,
+                    background:
+                      "linear-gradient(to right, #a54656 50%, #7e3643 70%, #692c37 10%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    fontSize: { xs: "2rem", md: "3rem" },
+                    color: "#97404f",
+                  }}
                 >
-                  fashion world?
+                  fashion world
                 </Box>
+                ?
               </Typography>
 
               <Typography
                 variant="body1"
                 sx={{
                   mb: 2,
-                  color: "#000",
+                  color: "#352F36",
                   fontSize: "0.9rem",
                   lineHeight: 1.5,
                   fontWeight: 400,
+                  maxWidth: "550px",
                 }}
               >
                 Join the waitlist to start your transformative journey with 99
@@ -79,7 +92,7 @@ export default function FashionCTABanner() {
               <Button
                 variant="contained"
                 sx={{
-                  backgroundColor: "#333",
+                  backgroundColor: "#352F36",
                   color: "white",
                   borderRadius: "10px",
                   padding: "14px 12px",

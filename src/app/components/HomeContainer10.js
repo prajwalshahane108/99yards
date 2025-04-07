@@ -78,84 +78,86 @@ export default function FAQSection() {
   ];
 
   return (
-    <Box sx={{ py: 8,  }}>
+    <Box sx={{ py: 8 }}>
       <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 4, md: 10 } }}>
         <Typography
-          variant="h4"
+          // variant="h4"
           component="h2"
           sx={{
             fontWeight: 900,
             mb: 4,
-            color: "#333",
+            color: "#352F36",
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" },
           }}
         >
           Frequently Asked Questions
         </Typography>
 
-        {faqs.map((faq, index) => (
-          <Accordion
-            key={index}
-            expanded={expanded === `panel${index}`}
-            onChange={handleChange(`panel${index}`)}
-            elevation={0}
-            sx={{
-              mb: 1,
-              borderRadius: "8px",
-              backgroundColor: "#333",
-              color: "white",
-              "&::before": {
-                display: "none",
-              },
-              "&.Mui-expanded": {
-                margin: "0 0 8px 0",
-              },
-              // Fix for ensuring accordion summary has correct border radius
-              "& .MuiAccordionSummary-root": {
-                borderRadius: "8px",
-                overflow: expanded === `panel${index}` ? "hidden" : "visible",
-              },
-              // Fix for first accordion
-              ...(index === 0 && {
-                borderTopLeftRadius: "8px",
-                borderTopRightRadius: "8px",
-              }),
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<AddIcon sx={{ color: "white" }} />}
-              aria-controls={`panel${index}bh-content`}
-              id={`panel${index}bh-header`}
+        {faqs.map((faq, index) => {
+          const isFirst = index === 0;
+          const isLast = index === faqs.length - 1;
+          const isExpanded = expanded === `panel${index}`;
+
+          return (
+            <Accordion
+              key={index}
+              expanded={isExpanded}
+              onChange={handleChange(`panel${index}`)}
+              elevation={0}
               sx={{
-                padding: "12px 16px",
-                minHeight: "48px",
-                borderRadius: expanded === `panel${index}` ? "8px 8px 0 0" : "8px",
-                "& .MuiAccordionSummary-content": {
-                  margin: "0",
-                  "&.Mui-expanded": {
-                    margin: "0",
-                  },
+                mb: 1,
+                backgroundColor: "#352F36",
+                color: "white",
+                borderRadius: "8px !important", // Force border radius
+                overflow: "hidden", // Important to contain child elements
+                "&::before": {
+                  display: "none",
+                },
+                "&.Mui-expanded": {
+                  margin: "0 0 8px 0",
                 },
               }}
             >
-              <Typography sx={{ fontWeight: 500, fontSize: "0.95rem" }}>
-                {faq.question}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                backgroundColor: "white",
-                color: "#333",
-                padding: "16px 24px",
-                borderBottomLeftRadius: "8px",
-                borderBottomRightRadius: "8px",
-              }}
-            >
-              <Typography sx={{ fontSize: "0.9rem", lineHeight: 1.6 }}>
-                {faq.answer}
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-        ))}
+              <AccordionSummary
+                expandIcon={<AddIcon sx={{ color: "white" }} />}
+                aria-controls={`panel${index}bh-content`}
+                id={`panel${index}bh-header`}
+                sx={{
+                  padding: "12px 16px",
+                  minHeight: "64px",
+                  borderTopLeftRadius: "8px",
+                  borderTopRightRadius: "8px",
+                  // Only add bottom radius when not expanded
+                  borderBottomLeftRadius: isExpanded ? "0" : "8px",
+                  borderBottomRightRadius: isExpanded ? "0" : "8px",
+                  "& .MuiAccordionSummary-content": {
+                    margin: "0",
+                    "&.Mui-expanded": {
+                      margin: "0",
+                    },
+                  },
+                }}
+              >
+                <Typography sx={{ fontWeight: 500, fontSize: "1rem" }}>
+                  {faq.question}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails
+                sx={{
+                  backgroundColor: "white",
+                  color: "#333",
+                  padding: "16px 24px",
+                  borderBottomLeftRadius: "8px",
+                  borderBottomRightRadius: "8px",
+                }}
+              >
+                <Typography sx={{ fontSize: "0.9rem", lineHeight: 1.6 }}>
+                  {faq.answer}
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          );
+        })}
       </Container>
     </Box>
   );

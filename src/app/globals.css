@@ -1,6 +1,8 @@
 :root {
   --background: #ffffff;
   --foreground: #f5f1f1;
+  font-family: var(--font-proxima-nova-regular) !important;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,7 +23,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-proxima-nova-regular) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,6 +32,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: var(--font-proxima-nova-regular) !important;
 }
 
 a {
@@ -41,4 +44,27 @@ a {
   html {
     color-scheme: dark;
   }
+}
+h1, h2 {
+  font-family: var(--font-proxima-nova-bold) !important;
+}
+
+h3 {
+  font-family: var(--font-proxima-nova-semibold) !important;
+}
+.semibold-text {
+  font-family: var(--font-proxima-nova-semibold) !important;
+}
+.bold-text{
+  font-family: var(--font-proxima-nova-bold) !important;
+}
+.thin-text {
+  font-family: var(--font-proxima-nova-thin) !important;
+}
+
+.alt-thin-text {
+  font-family: var(--font-proxima-nova-alt-thin) !important;
+}
+.regular-text {
+  font-family: var(--font-proxima-nova-regular) !important;
 }

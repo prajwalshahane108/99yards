@@ -41,7 +41,7 @@ export default function PricingComparison() {
           color: '#333',
         }}
       >
-        What's the difference?
+        What&apos;s the difference?
       </Typography>
       
       {/* Plan Headers with Buttons */}
