@@ -62,7 +62,7 @@ export default function Navbar() {
               },
               cursor: "pointer"
             }}
-            onClick={() => router.push(item.path)}
+            onClick={() => router.push("/")}
           >
             <ListItemText
               primary={item.name}
@@ -90,7 +90,7 @@ export default function Navbar() {
               width: "100%",
               mb: 1,
             }}
-            onClick={() => router.push("/login")}
+            onClick={() => router.push("/")}
           >
             Log in
           </Button>
@@ -110,7 +110,7 @@ export default function Navbar() {
                 backgroundColor: "#404040",
               },
             }}
-            onClick={() => router.push("/waitlist")}
+            onClick={() => router.push("/")}
           >
             Join waitlist
           </Button>
