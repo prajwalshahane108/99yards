@@ -169,7 +169,7 @@ export default function Navbar() {
             {navLinks.map((item) => (
               <Box
                 key={item.name}
-                onClick={() => router.push(item.path)}
+                onClick={() => router.push("/")}
                 sx={{
                   cursor: "pointer",
                   color: "#352F36",
@@ -203,7 +203,7 @@ export default function Navbar() {
                   backgroundColor: "#f5f5f5",
                 },
               }}
-              onClick={() => router.push("/login")}
+              onClick={() => router.push("/")}
             >
               Log in
             </Button>
@@ -223,7 +223,7 @@ export default function Navbar() {
                   backgroundColor: "#404040",
                 },
               }}
-              onClick={() => router.push("/waitlist")}
+              onClick={() => router.push("/")}
             >
               Join waitlist
             </Button>
