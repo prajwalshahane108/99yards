@@ -30,11 +30,11 @@ export default function FashionCareerSection() {
         overflow: "hidden", // Prevent overflow issues
       }}
     >
-      <Container 
-        maxWidth="lg" 
-        sx={{ 
+      <Container
+        maxWidth="lg"
+        sx={{
           px: { xs: 2, sm: 3, md: 4 }, // Increased padding for better spacing
-          width: "100%" // Ensure container takes full width
+          width: "100%", // Ensure container takes full width
         }}
       >
         <Grid
@@ -72,8 +72,8 @@ export default function FashionCareerSection() {
                   position: "absolute",
                   top: 0,
                   left: { xs: "calc(50% - 170px)", md: 0 }, // Responsive positioning
-                  width: { xs: "180px", sm: "220px", md: "250px" },
-                  height: { xs: "120px", sm: "150px", md: "170px" },
+                  width: { xs: "180px", sm: "220px", md: "300px" },
+                  height: { xs: "120px", sm: "150px", md: "200px" },
                   borderRadius: "8px",
                   overflow: "hidden",
                   zIndex: 1,
@@ -94,9 +94,9 @@ export default function FashionCareerSection() {
                 sx={{
                   position: "absolute",
                   top: { xs: "100px", md: "130px" },
-                  right: { xs: "calc(50% - 170px)", md: 40 }, // Responsive positioning
-                  width: { xs: "180px", sm: "220px", md: "250px" },
-                  height: { xs: "120px", sm: "150px", md: "170px" },
+                  right: { xs: "calc(50% - 170px)", md: -30 }, // Responsive positioning
+                  width: { xs: "180px", sm: "220px", md: "300px" },
+                  height: { xs: "120px", sm: "150px", md: "200px" },
                   borderRadius: "8px",
                   overflow: "hidden",
                   zIndex: 3,
@@ -116,10 +116,10 @@ export default function FashionCareerSection() {
               <Box
                 sx={{
                   position: "absolute",
-                  bottom: { xs: 0, md: 30 },
+                  bottom: { xs: 0, md: 10 },
                   left: { xs: "calc(50% - 170px)", md: 0 }, // Responsive positioning
-                  width: { xs: "180px", sm: "220px", md: "250px" },
-                  height: { xs: "120px", sm: "150px", md: "170px" },
+                  width: { xs: "180px", sm: "220px", md: "300px" },
+                  height: { xs: "120px", sm: "150px", md: "200px" },
                   borderRadius: "8px",
                   overflow: "hidden",
                   zIndex: 2,
@@ -157,14 +157,15 @@ export default function FashionCareerSection() {
               }}
             >
               <Typography
-                variant="h5"
+                variant="h1"
                 component="div"
+                className="bold-text"
                 sx={{
-                  fontWeight: 700,
+                  fontWeight: 900,
                   mb: { xs: 1.5, md: 2 },
-                  color: "#333",
-                  lineHeight: 1.3,
-                  fontSize: { xs: "1.3rem", sm: "1.5rem", md: "2rem" },
+                  color: "#352F36",
+                  lineHeight: 1.2,
+                  fontSize: { xs: "1.3rem", sm: "1.5rem", md: "1.9rem" },
                 }}
               >
                 Pivoting into fashion, advancing your career, or{" "}
@@ -179,6 +180,7 @@ export default function FashionCareerSection() {
                     backgroundClip: "text",
                     color: "#97404f", // Fallback color for browsers that don't support the gradient
                     position: "relative",
+                    fontSize: { xs: "1.3rem", sm: "1.5rem", md: "1.9rem" },
                   }}
                 >
                   growing your business
@@ -189,7 +191,7 @@ export default function FashionCareerSection() {
               <Typography
                 variant="body1"
                 sx={{
-                  mb: { xs: 3, md: 4 },
+                  mb: { xs: 3, md: 3 },
                   color: "#352F36",
                   lineHeight: 1.6,
                   fontSize: { xs: "0.9rem", sm: "1rem", md: "1rem" },

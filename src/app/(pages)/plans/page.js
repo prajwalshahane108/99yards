@@ -16,7 +16,6 @@ export default function LandingPage() {
       <PlanHero />
       <PlanContainer2 />
       <PlanContainer3 />
-      <PlanContainer4 />
       <Footer />
 
       {/* <PlanContainer5 />

@@ -1,3 +1,4 @@
+import "../../globals.css";
 import Navbar from "../../components/Navbar";
 import HomeHero from "../../components/HomeHero";
 import HomeContainer2 from "../../components/HomeContainer2";

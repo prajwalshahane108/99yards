@@ -1,5 +1,5 @@
-import Home from './(pages)/landingpage/page'
 import "./globals.css";
+import Home from './(pages)/landingpage/page'
 
 export default function RootLayout() {
   return (
