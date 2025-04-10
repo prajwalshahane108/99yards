@@ -152,7 +152,7 @@ const PrivacyPolicyContent = () => (
 
     <Section title="Introduction">
       <Typography paragraph>
-        Welcome to 99 Yards Academy ("we," "our," "us"). We are committed to protecting your privacy and ensuring transparency 
+        Welcome to 99 Yards Academy ("we", "our", "us"). We are committed to protecting your privacy and ensuring transparency 
         about how we collect, use, and safeguard your information. This Privacy Policy applies to all users of our platform and 
         services. By accessing or using 99 Yards Academy, you agree to the practices outlined in this policy.
       </Typography>
@@ -366,7 +366,7 @@ const TermsConditionsContent = () => (
 
     <Section title="Introduction">
       <Typography paragraph>
-        Welcome to 99 Yards Academy ("we," "our," "us"). By accessing
+        Welcome to 99 Yards Academy ("we", "our", "us"). By accessing
         or using our platform, you agree to these Terms of Use
         ("Terms"). These Terms govern your use of our website, mobile
         app, and services (collectively, the "Platform"). Please read

@@ -165,7 +165,7 @@ const PrivacyPolicyContent = () => (
 
     <Section color="#352f36" title="Introduction">
       <Typography color="#352f36" paragraph>
-        Welcome to 99 Yards Academy ("we," "our," "us"). We are committed to
+        Welcome to 99 Yards Academy ("we", "our", "us"). We are committed to
         protecting your privacy and ensuring transparency about how we collect,
         use, and safeguard your information. This Privacy Policy applies to all
         users of our platform and services. By accessing or using 99 Yards
@@ -526,7 +526,7 @@ const TermsConditionsContent = () => (
 
     <Section color="#352f36" title="Introduction">
       <Typography color="#352f36" paragraph>
-        Welcome to 99 Yards Academy ("we," "our," "us"). By accessing or using
+        Welcome to 99 Yards Academy ("we", "our", "us"). By accessing or using
         our platform, you agree to these Terms of Use ("Terms"). These Terms
         govern your use of our website, mobile app, and services (collectively,
         the "Platform"). Please read these Terms carefully. If you do not agree,

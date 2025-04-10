@@ -1,12 +1,6 @@
-import "./globals.css";
+// app/page.js
 import Home from './(pages)/landingpage/page'
 
-export default function RootLayout() {
-  return (
-    <html lang="en">
-      <body>
-        <Home />       
-      </body>
-    </html>
-  );
+export default function Page() {
+  return <Home />;
 }

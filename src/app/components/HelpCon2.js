@@ -87,15 +87,14 @@ export default function Home() {
                   >
                     {item.isImage ? (
                       <Image
-                        src={item.icon}
-                        alt={item.title}
-                        style={{
-                          borderRadius: "50%",
-                          objectFit: "contain",
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      />
+                      src={item.icon}
+                      alt={item.title}
+                      width={130}
+                      height={130}
+                      style={{
+                        objectFit: "contain",
+                      }}
+                    />
                     ) : (
                       React.cloneElement(item.icon, {
                         sx: { color: "#352f36", fontSize: 80 }, // 👈 customize color here
