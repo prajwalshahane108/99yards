@@ -11,7 +11,7 @@ import {
 // import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
+import Image from "next/image"; // Import Image from next/image
 const cardData = [
   {
     title: "Getting Started",
@@ -86,7 +86,7 @@ export default function Home() {
                     }}
                   >
                     {item.isImage ? (
-                      <img
+                      <Image
                         src={item.icon}
                         alt={item.title}
                         style={{
