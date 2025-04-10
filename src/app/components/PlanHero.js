@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from 'react';
 import { Box, Typography, Container, Switch, FormGroup, FormControlLabel } from '@mui/material';
 
@@ -11,14 +10,24 @@ export default function PricingHeader() {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ py: 6, textAlign: 'center' }}>
+    // <Container maxWidth="lg" sx={{ py: 6, textAlign: 'center' }}>
+    <Container
+          maxWidth="lg"
+          sx={{
+            textAlign: 'center',
+            px: { xs: 2, sm: 3, md: 10 },
+            py: { xs: 4, sm: 5, md: 6 },
+            overflow: "initial",
+            position: "relative", // Added for positioning the blur effect
+          }}
+        >
       {/* Main Heading */}
       <Typography 
         variant="h2" 
         component="h1" 
         sx={{ 
           fontWeight: 700, 
-          mb: 2,
+          mb: 1,
           color: '#333',
           fontSize: { xs: '2rem', md: '2.75rem' }
         }}

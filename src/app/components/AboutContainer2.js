@@ -7,12 +7,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Inter, Arial, sans-serif',
+    fontFamily: 'proxima-nova',
     h2: {
       fontWeight: 600,
       fontSize: '3rem',
       lineHeight: 1.2,
-      color: '#333333',
+      color: '#352f36',
       textAlign: 'center',
       marginBottom: '2rem',
       '@media (max-width:600px)': {
@@ -22,7 +22,7 @@ const theme = createTheme({
     body1: {
       fontSize: '1rem',
       lineHeight: 1.7,
-      color: '#333333',
+      color: '#352f36',
       textAlign: 'center',
     },
   },

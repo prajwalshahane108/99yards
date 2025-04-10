@@ -62,7 +62,13 @@ import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';export d
                     alignSelf: "center",
                   }}
                 >
-                  <NoteOutlinedIcon sx={{ color: "#333", fontSize: 44 }} />
+                  <Image
+                    src="/99-new1.webp"
+                    alt="Learning"
+                    width={60}
+                    height={60}
+                    style={{ objectFit: "cover" }}
+                  />
                 </Box>
                 <Box>
                   <Typography
@@ -176,7 +182,13 @@ import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';export d
                     alignSelf: "center",
                   }}
                 >
-                  <MenuBookIcon sx={{ color: "#333", fontSize: 44 }} />
+                 <Image
+                    src="/99-book.webp"
+                    alt="Learning"
+                    width={60}
+                    height={60}
+                    style={{ objectFit: "cover" }}
+                  />
                 </Box>
                 <Box>
                   <Typography
@@ -231,7 +243,13 @@ import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';export d
                     alignSelf: "center",
                   }}
                 >
-                  <CheckBoxOutlinedIcon sx={{ color: "#333", fontSize: 44 }} />
+                  <Image
+                    src="/99-new3.webp"
+                    alt="Learning"
+                    width={60}
+                    height={60}
+                    style={{ objectFit: "cover" }}
+                  />
                 </Box>
                 <Box>
                   <Typography
@@ -344,7 +362,13 @@ import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';export d
                     alignSelf: "center",
                   }}
                 >
-                  <AccountCircleOutlinedIcon sx={{ color: "#333", fontSize: 44 }} />
+                  <Image
+                    src="/99-new2.webp"
+                    alt="Learning"
+                    width={60}
+                    height={60}
+                    style={{ objectFit: "cover" }}
+                  />
                 </Box>
                 <Box>
                   <Typography

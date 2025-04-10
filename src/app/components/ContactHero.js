@@ -133,7 +133,7 @@ export default function GetInTouch() {
               Need help with your existing account?
             </Typography>
 
-            <Link color="primary">
+            <Link href="/help" color="primary">
               <Typography
                 component="span"
                 sx={{
@@ -157,7 +157,7 @@ export default function GetInTouch() {
               Have a simple question?
             </Typography>
 
-            <Link href="/faq" color="primary">
+            <Link href="/" color="primary">
               <Typography
                 component="span"
                 sx={{

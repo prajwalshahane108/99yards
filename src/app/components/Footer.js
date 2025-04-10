@@ -55,14 +55,14 @@ export default function Footer() {
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.9 }}>
               <Link
-                href="#"
+                href="/plans"
                 underline="none"
                 sx={{ fontSize: "16px", color: "#352F36", "&:hover": { color: "#352F36" } }}
               >
                 Plans & Pricing
               </Link>
               <Link
-                href="#"
+                href="/"
                 underline="none"
                 sx={{fontSize: "16px", color: "#352F36", "&:hover": { color: "#352F36" } }}
               >
@@ -81,14 +81,14 @@ export default function Footer() {
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.9 }}>
               <Link
-                href="#"
+                href="/help"
                 underline="none"
                 sx={{fontSize: "16px",  color: "#352F36", "&:hover": { color: "#352F36" } }}
               >
                 Help
               </Link>
               <Link
-                href="#"
+                href="/contactus"
                 underline="none"
                 sx={{ fontSize: "16px", color: "#352F36", "&:hover": { color: "#352F36" } }}
               >
@@ -107,14 +107,14 @@ export default function Footer() {
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.9 }}>
               <Link
-                href="#"
+                href="/privacy"
                 underline="none"
                 sx={{ fontSize: "16px", color: "#352F36", "&:hover": { color: "#352F36" } }}
               >
                 Privacy Policies
               </Link>
               <Link
-                href="#"
+                href="/terms"
                 underline="none"
                 sx={{ fontSize: "16px", color: "#352F36", "&:hover": { color: "#352F36" } }}
               >

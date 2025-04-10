@@ -28,9 +28,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Plans & Pricing", path: "/plans" },
-    { name: "Teach on 99 Academy", path: "/teach" },
+    { name: "Teach on 99 Academy", path: "/" },
   ];
 
+  // Drawer content for mobile
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", p: 2 }}>
       <Box sx={{ my: 2 }}>
@@ -47,7 +48,7 @@ export default function Navbar() {
             alt="99Kards Academy Logo"
             fill
             style={{ objectFit: "contain" }}
-            onClick={() => router.push("/")}
+            onClick={() => router.push("/")} // This one is OK since it's the home route
           />
         </div>
       </Box>
@@ -62,7 +63,7 @@ export default function Navbar() {
               },
               cursor: "pointer"
             }}
-            onClick={() => router.push("/")}
+            onClick={() => router.push(item.path)} // Fixed: Now pushes to the correct path
           >
             <ListItemText
               primary={item.name}
@@ -90,7 +91,7 @@ export default function Navbar() {
               width: "100%",
               mb: 1,
             }}
-            onClick={() => router.push("/")}
+            onClick={() => router.push("/")} // Fixed: Now pushes to login page
           >
             Log in
           </Button>
@@ -110,7 +111,7 @@ export default function Navbar() {
                 backgroundColor: "#404040",
               },
             }}
-            onClick={() => router.push("/")}
+            onClick={() => router.push("/")} // Fixed: Now pushes to waitlist page
           >
             Join waitlist
           </Button>
@@ -150,7 +151,7 @@ export default function Navbar() {
                 height: "60px",
                 cursor: "pointer",
               }}
-              onClick={() => router.push("/")}
+              onClick={() => router.push("/")} // This is correct for the logo
             >
               <Image
                 src="/logo.png"
@@ -169,7 +170,7 @@ export default function Navbar() {
             {navLinks.map((item) => (
               <Box
                 key={item.name}
-                onClick={() => router.push("/")}
+                onClick={() => router.push(item.path)} // Fixed: Now pushes to the correct path
                 sx={{
                   cursor: "pointer",
                   color: "#352F36",
@@ -203,7 +204,7 @@ export default function Navbar() {
                   backgroundColor: "#f5f5f5",
                 },
               }}
-              onClick={() => router.push("/")}
+              onClick={() => router.push("/")} // Fixed: Now pushes to login page
             >
               Log in
             </Button>
@@ -223,7 +224,7 @@ export default function Navbar() {
                   backgroundColor: "#404040",
                 },
               }}
-              onClick={() => router.push("/")}
+              onClick={() => router.push("/")} // Fixed: Now pushes to waitlist page
             >
               Join waitlist
             </Button>

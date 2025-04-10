@@ -21,11 +21,11 @@ import FullscreenIcon from "@mui/icons-material/Fullscreen";
 
 const theme = createTheme({
   typography: {
-    fontFamily: "Inter, Arial, sans-serif",
+    fontFamily: "proxima-nova",
     h2: {
       fontWeight: 600,
       fontSize: "3rem",
-      color: "#333333",
+      color: "#352f36",
       "@media (max-width:600px)": {
         fontSize: "2rem",
       },

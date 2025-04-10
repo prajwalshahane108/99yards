@@ -58,13 +58,13 @@ h3 {
 .bold-text{
   font-family: var(--font-proxima-nova-bold) !important;
 }
-.thin-text {
+.thin-text{
   font-family: var(--font-proxima-nova-thin) !important;
 }
 
-.alt-thin-text {
+.alt-thin-text{
   font-family: var(--font-proxima-nova-alt-thin) !important;
 }
-.regular-text {
+.regular-text{
   font-family: var(--font-proxima-nova-regular) !important;
 }

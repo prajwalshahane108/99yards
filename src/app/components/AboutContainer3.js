@@ -11,7 +11,7 @@ const theme = createTheme({
       fontWeight: 600,
       fontSize: '3rem',
       textAlign: 'center',
-      color: '#333333',
+      color: '#352f36',
       marginBottom: '3rem',
       '@media (max-width:600px)': {
         fontSize: '2.5rem',

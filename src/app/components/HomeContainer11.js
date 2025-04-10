@@ -49,7 +49,7 @@ export default function FashionCTABanner() {
                   fontWeight: 900,
                   mb: 1,
                   mt: 2,
-                  color: "#333",
+                  color: "#352f36",
                   fontSize: { xs: "2rem", md: "3rem" },
                   lineHeight: 1.1,
                 }}
