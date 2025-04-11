@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Typography,
@@ -11,13 +11,22 @@ import {
   useTheme,
 } from "@mui/material";
 import Image from "next/image";
-
+import JoinWaitlistModal from "../components/JoinWaitlistModal"; // Corrected import path
 export default function FashionCareerSection() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const isSmallMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [waitlistModalOpen, setWaitlistModalOpen] = useState(false);
 
+  const handleOpenWaitlistModal = () => {
+    setWaitlistModalOpen(true);
+  };
+
+  const handleCloseWaitlistModal = () => {
+    setWaitlistModalOpen(false);
+  };
   return (
+    <>
     <Box
       sx={{
         py: { xs: 6, sm: 8, md: 10 }, // Add proper padding top and bottom
@@ -211,6 +220,7 @@ export default function FashionCareerSection() {
               >
                 <Button
                   variant="contained"
+                  onClick={handleOpenWaitlistModal} // Fixed: Now pushes to waitlist page
                   sx={{
                     backgroundColor: "#352F36",
                     color: "white",
@@ -232,5 +242,10 @@ export default function FashionCareerSection() {
         </Grid>
       </Container>
     </Box>
+    <JoinWaitlistModal 
+    open={waitlistModalOpen} 
+    onClose={handleCloseWaitlistModal} 
+  />
+  </>
   );
 }

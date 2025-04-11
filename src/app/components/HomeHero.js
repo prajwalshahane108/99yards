@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Typography,
   Container,
   Grid,
   Card,
+  Button,
   CardContent,
   useMediaQuery,
   useTheme,
@@ -16,13 +17,25 @@ import SchoolIcon from "@mui/icons-material/School";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import HandshakeOutlinedIcon from "@mui/icons-material/HandshakeOutlined";
+import JoinWaitlistModal from "../components/JoinWaitlistModal"; // Corrected import path
+import InsertDriveFileOutlinedIcon from '@mui/icons-material/InsertDriveFileOutlined';
 
 export default function FashionCourseSection() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+  const [waitlistModalOpen, setWaitlistModalOpen] = useState(false);
 
+
+  const handleOpenWaitlistModal = () => {
+    setWaitlistModalOpen(true);
+  };
+
+  const handleCloseWaitlistModal = () => {
+    setWaitlistModalOpen(false);
+  };
   return (
+    <>
     <Container
       maxWidth="lg"
       sx={{
@@ -114,6 +127,25 @@ export default function FashionCourseSection() {
           Gain hands-on experience through real-world projects, expert
           mentorship, and create a winning fashion business.
         </Typography>
+        <Button
+          variant="contained"
+          sx={{
+            mt: 2,
+            backgroundColor: "#352F36",
+            borderRadius: "10px",
+            textTransform: "none",
+            fontWeight: 700,
+            fontSize: "16px",
+            marginRight: "12px",
+            padding: "12px 15px",
+            "&:hover": {
+              backgroundColor: "#404040",
+            },
+          }}
+          onClick={handleOpenWaitlistModal} // Fixed: Now pushes to waitlist page
+        >
+          Join waitlist
+        </Button>
       </Box>
 
       {/* Main Image with pink shadow - centered */}
@@ -155,191 +187,247 @@ export default function FashionCourseSection() {
 
       {/* Feature Cards */}
       <Grid
-        container
-        spacing={{ xs: 3, sm: 4, md: 14 }}
-        justifyContent={{ xs: "center", md: "space-between" }}
-        sx={{ position: "relative", zIndex: 1 }} // Ensure cards appear above blur
-      >
-        {/* Card 1 */}
-        <Grid item xs={12} sm={6} md={3} lg={2.8}>
-          <Card
-            elevation={0}
+      container
+      spacing={{ xs: 2, sm: 3, md: 10 }}
+      justifyContent="space-evenly"
+      sx={{ 
+        position: "relative", 
+        zIndex: 1,
+        px: { xs: 2, sm: 3, md: 1 }
+      }}
+    >
+      {/* Card 1 */}
+      <Grid item xs={12} sm={6} md={4} lg={2.4}>
+        <Card
+          elevation={0}
+          sx={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: { xs: "center", sm: "flex-start" },
+            textAlign: { xs: "center", sm: "left" },
+            boxShadow: "none",
+            p: 0
+          }}
+        >
+          <Box
             sx={{
-              height: "100%",
               display: "flex",
-              flexDirection: "column",
-              alignItems: { xs: "center", sm: "flex-start" },
-              textAlign: { xs: "center", sm: "left" },
-              boxShadow: "none",
+              justifyContent: { xs: "center", sm: "flex-start" },
+              mb: 1,
             }}
           >
-            <Box
+            <HandshakeOutlinedIcon
               sx={{
-                position: "relative",
-                width: isMobile ? "50px" : isTablet ? "60px" : "70px",
-                height: isMobile ? "50px" : isTablet ? "60px" : "70px",
+                color: "#666679",
+                fontSize: { xs: 45, sm: 50, md: 55 },
+              }}
+            />
+          </Box>
+          <CardContent sx={{ p: 0, pt: 1 }}>
+            <Typography
+              variant="body2"
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+                color: "#352F36",
+                lineHeight: 1.5,
               }}
             >
-              <Image
-                src="/download.png"
-                alt="99Kards Academy Logo"
-                fill
-                style={{ objectFit: "contain" }}
-              />
-            </Box>
-            <CardContent sx={{ p: 1 }}>
-              <Typography
-                variant="body2"
-                sx={{
-                  fontWeight: 700,
-                  fontSize: { xs: "0.9rem", sm: "1rem" },
-                  color: "#352F36",
-                }}
-              >
-                Affordable fashion education for your life dreams.
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-
-        {/* Card 2 */}
-        <Grid item xs={12} sm={6} md={3} lg={2.8}>
-          <Card
-            elevation={0}
-            sx={{
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: { xs: "center", sm: "flex-start" },
-              textAlign: { xs: "center", sm: "left" },
-              boxShadow: "none",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: { xs: "center", sm: "flex-start" },
-                mb: 2,
-              }}
-            >
-              <AvTimerIcon
-                sx={{
-                  color: "#c7b897",
-                  fontSize: { xs: 50, sm: 60, md: 70 },
-                }}
-              />
-            </Box>
-            <CardContent sx={{ p: 1 }}>
-              <Typography
-                variant="body2"
-                sx={{
-                  fontWeight: 700,
-                  mb: 1,
-                  fontSize: { xs: "0.9rem", sm: "1rem" },
-                  color: "#352F36",
-                }}
-              >
-                Learn anytime, anywhere. <br /> Flexible, on-demand learning.
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-
-        {/* Card 3 */}
-        <Grid item xs={12} sm={6} md={3} lg={2.8}>
-          <Card
-            elevation={0}
-            sx={{
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: { xs: "center", sm: "flex-start" },
-              textAlign: { xs: "center", sm: "left" },
-              boxShadow: "none",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: { xs: "center", sm: "flex-start" },
-                mb: 2,
-              }}
-            >
-              <CalendarTodayOutlinedIcon
-                sx={{
-                  color: "#c05265",
-                  fontSize: { xs: 50, sm: 60, md: 55 },
-                }}
-              />
-            </Box>
-            <CardContent sx={{ p: 1 }}>
-              <Typography
-                variant="body2"
-                sx={{
-                  fontWeight: 700,
-                  mb: 1,
-                  fontSize: { xs: "0.9rem", sm: "1rem" },
-                  color: "#352F36",
-                }}
-              >
-                Real-world fashion projects <br /> Industry-driven challenges to
-                test skills.
-              </Typography>
-              {/* <Typography
-                variant="caption"
-                color="text.secondary"
-                sx={{
-                  fontSize: { xs: "0.75rem", sm: "0.8rem" },
-                }}
-              >
-                Industry-driven challenges to test skills.
-              </Typography> */}
-            </CardContent>
-          </Card>
-        </Grid>
-
-        {/* Card 4 */}
-        <Grid item xs={12} sm={6} md={3} lg={2.8}>
-          <Card
-            elevation={0}
-            sx={{
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: { xs: "center", sm: "flex-start" },
-              textAlign: { xs: "center", sm: "left" },
-              boxShadow: "none",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: { xs: "center", sm: "flex-start" },
-                mb: 2,
-              }}
-            >
-              <HandshakeOutlinedIcon
-                sx={{
-                  color: "#666679",
-                  fontSize: { xs: 50, sm: 60, md: 65 },
-                }}
-              />
-            </Box>
-            <CardContent sx={{ p: 1 }}>
-              <Typography
-                variant="body2"
-                sx={{
-                  fontWeight: 700,
-                  fontSize: { xs: "0.9rem", sm: "1rem" },
-                  color: "#352F36",
-                }}
-              >
-                Learn from industry experts through personalized mentorship.
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+              Get direct guidance from real industry leaders and proven fashion business
+              builders.
+            </Typography>
+          </CardContent>
+        </Card>
       </Grid>
+
+      {/* Card 2 */}
+      <Grid item xs={12} sm={6} md={4} lg={2.4}>
+        <Card
+          elevation={0}
+          sx={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: { xs: "center", sm: "flex-start" },
+            textAlign: { xs: "center", sm: "left" },
+            boxShadow: "none",
+            p: 0
+          }}
+        >
+          <Box
+            sx={{
+              position: "relative",
+              width: { xs: "45px", sm: "50px", md: "55px" },
+              height: { xs: "45px", sm: "50px", md: "55px" },
+              mb: 1,
+            }}
+          >
+            <Image
+              src="/shirt.png"
+              alt="Manufacturer access icon"
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </Box>
+          <CardContent sx={{ p: 0, pt: 1 }}>
+            <Typography
+              variant="body2"
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+                color: "#352F36",
+                lineHeight: 1.5,
+              }}
+            >
+              Search and access trusted manufacturers, patternmakers, photographers, and
+              more in your market.
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+
+      {/* Card 3 */}
+      <Grid item xs={12} sm={6} md={4} lg={2.4}>
+        <Card
+          elevation={0}
+          sx={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: { xs: "center", sm: "flex-start" },
+            textAlign: { xs: "center", sm: "left" },
+            boxShadow: "none",
+            p: 0
+          }}
+        >
+          <Box
+            sx={{
+              position: "relative",
+              width: { xs: "45px", sm: "50px", md: "55px" },
+              height: { xs: "45px", sm: "50px", md: "55px" },
+              mb: 1,
+            }}
+          >
+            <Image
+              src="/booki.png"
+              alt="Content evolution icon"
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </Box>
+          <CardContent sx={{ p: 0, pt: 1 }}>
+            <Typography
+              variant="body2"
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+                color: "#352F36",
+                lineHeight: 1.5,
+              }}
+            >
+              Content evolves with your journey—expert updates based on real questions and
+              industry shifts.
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+
+      {/* Card 4 */}
+      <Grid item xs={12} sm={6} md={4} lg={2.4}>
+        <Card
+          elevation={0}
+          sx={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: { xs: "center", sm: "flex-start" },
+            textAlign: { xs: "center", sm: "left" },
+            boxShadow: "none",
+            p: 0
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: { xs: "center", sm: "flex-start" },
+              mb: 1,
+            }}
+          >
+            <InsertDriveFileOutlinedIcon
+              sx={{
+                color: "#333366",
+                fontSize: { xs: 45, sm: 50, md: 55 },
+              }}
+            />
+          </Box>
+          <CardContent sx={{ p: 0, pt: 1 }}>
+            <Typography
+              variant="body2"
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+                color: "#352F36",
+                lineHeight: 1.5,
+              }}
+            >
+              Use done-for-you tools, checklists, and planning templates to bring your ideas to
+              life faster.
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+
+      {/* Card 5 */}
+      <Grid item xs={12} sm={6} md={4} lg={2.4}>
+        <Card
+          elevation={0}
+          sx={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: { xs: "center", sm: "flex-start" },
+            textAlign: { xs: "center", sm: "left" },
+            boxShadow: "none",
+            p: 0
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: { xs: "center", sm: "flex-start" },
+              mb: 1,
+            }}
+          >
+            <AvTimerIcon
+              sx={{
+                color: "#c7b897",
+                fontSize: { xs: 45, sm: 50, md: 55 },
+              }}
+            />
+          </Box>
+          <CardContent sx={{ p: 0, pt: 1 }}>
+            <Typography
+              variant="body2"
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+                color: "#352F36",
+                lineHeight: 1.5,
+              }}
+            >
+              Learn at your pace with mobile-first, on-demand learning paths you can apply
+              immediately.
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>
     </Container>
+    <JoinWaitlistModal 
+        open={waitlistModalOpen} 
+        onClose={handleCloseWaitlistModal} 
+      />
+      </>
   );
 }

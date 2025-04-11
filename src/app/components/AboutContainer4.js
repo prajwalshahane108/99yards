@@ -73,8 +73,8 @@ export default function MeetTheTeam() {
   const [currentTime, setCurrentTime] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef(null);
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
 
   // Effect to update video progress
   useEffect(() => {
@@ -92,12 +92,12 @@ export default function MeetTheTeam() {
       setDuration(video.duration);
     };
 
-    video.addEventListener('timeupdate', updateProgress);
-    video.addEventListener('loadedmetadata', handleLoadedMetadata);
+    video.addEventListener("timeupdate", updateProgress);
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
 
     return () => {
-      video.removeEventListener('timeupdate', updateProgress);
-      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      video.removeEventListener("timeupdate", updateProgress);
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
     };
   }, []);
 
@@ -115,7 +115,8 @@ export default function MeetTheTeam() {
   const handleProgressChange = (event, newValue) => {
     setProgress(newValue);
     if (videoRef.current && videoRef.current.duration) {
-      videoRef.current.currentTime = (newValue / 100) * videoRef.current.duration;
+      videoRef.current.currentTime =
+        (newValue / 100) * videoRef.current.duration;
       setCurrentTime(videoRef.current.currentTime);
     }
   };
@@ -156,7 +157,7 @@ export default function MeetTheTeam() {
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
-    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
   };
 
   return (
@@ -175,14 +176,14 @@ export default function MeetTheTeam() {
             width: "100%",
           }}
         >
-          <Grid 
-            container 
-            spacing={{ xs: 3, md: 4 }} 
+          <Grid
+            container
+            spacing={{ xs: 3, md: 4 }}
             alignItems="center"
-            direction={{ xs: 'column-reverse', md: 'row' }}
+            direction={{ xs: "column-reverse", md: "row" }}
           >
             {/* Video Player */}
-            <Grid item xs={12} md={7} sx={{ width: '100%' }}>
+            <Grid item xs={12} md={7} sx={{ width: "100%" }}>
               <Box
                 sx={{
                   position: "relative",
@@ -203,11 +204,11 @@ export default function MeetTheTeam() {
                     height: "auto",
                     aspectRatio: "16/9",
                     display: "block",
-                    backgroundColor: "#555555",
+                    // backgroundColor: "#555555",
                   }}
-                  poster="/video-placeholder.jpg"
+                  poster="/video-placeholder.jpg" // You can update this to a specific thumbnail for 99yards video if available
                 >
-                  <source src="/team-video.mp4" type="video/mp4" />
+                  <source src="/99yards.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </Box>
 
@@ -217,19 +218,22 @@ export default function MeetTheTeam() {
                     position: "relative",
                     padding: { xs: "6px 8px", md: "8px 12px" },
                     display: "flex",
-                    flexDirection: { xs: isMobile ? "column" : "row", md: "row" },
+                    flexDirection: {
+                      xs: isMobile ? "column" : "row",
+                      md: "row",
+                    },
                     alignItems: "center",
                     backgroundColor: "white",
                     gap: 1,
                   }}
                 >
                   {/* Main Controls Group */}
-                  <Box 
-                    sx={{ 
-                      display: "flex", 
+                  <Box
+                    sx={{
+                      display: "flex",
                       alignItems: "center",
                       width: isMobile ? "100%" : "auto",
-                      justifyContent: isMobile ? "space-between" : "flex-start" 
+                      justifyContent: isMobile ? "space-between" : "flex-start",
                     }}
                   >
                     {/* Play/Pause */}
@@ -240,20 +244,20 @@ export default function MeetTheTeam() {
                     {!isMobile && (
                       <>
                         {/* Previous */}
-                        <IconButton size="small">
+                        {/* <IconButton size="small">
                           <SkipPreviousIcon />
-                        </IconButton>
+                        </IconButton> */}
 
                         {/* Next */}
-                        <IconButton size="small">
+                        {/* <IconButton size="small">
                           <SkipNextIcon />
-                        </IconButton>
+                        </IconButton> */}
                       </>
                     )}
 
                     {/* Time display for mobile */}
                     {isMobile && (
-                      <Typography variant="caption" sx={{ mx: 1 }}>
+                      <Typography variant="caption" sx={{ mx: 1,  }}>
                         {formatTime(currentTime)} / {formatTime(duration)}
                       </Typography>
                     )}
@@ -272,20 +276,26 @@ export default function MeetTheTeam() {
                   </Box>
 
                   {/* Progress Group - on its own row for mobile */}
-                  <Box 
-                    sx={{ 
-                      display: "flex", 
-                      alignItems: "center", 
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
                       flex: 1,
                       width: isMobile ? "100%" : "auto",
                     }}
                   >
                     {/* Time display for non-mobile */}
-                    {!isMobile && (
-                      <Typography variant="caption" sx={{ mx: 1, minWidth: '70px' }}>
+                    {/* {!isMobile && (
+                      <Typography
+                        variant="caption"
+                        sx={{ mx: 1, minWidth: "70px",
+                        color: "primary.main",
+
+                          }}
+                      >
                         {formatTime(currentTime)} / {formatTime(duration)}
                       </Typography>
-                    )}
+                    )} */}
 
                     {/* Progress Slider */}
                     <Slider
@@ -333,13 +343,18 @@ export default function MeetTheTeam() {
             </Grid>
 
             {/* Text Content */}
-            <Grid item xs={12} md={5} sx={{ width: '100%', textAlign: { xs: 'center', md: 'left' } }}>
+            <Grid
+              item
+              xs={12}
+              md={5}
+              sx={{ width: "100%", textAlign: { xs: "center", md: "left" } }}
+            >
               <Typography
                 variant="h2"
                 component="h1"
-                sx={{ 
+                sx={{
                   mb: { xs: 2, md: 3 },
-                  fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' }
+                  fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
                 }}
               >
                 Meet the team

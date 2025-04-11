@@ -17,15 +17,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import MenuIcon from "@mui/icons-material/Menu";
+import JoinWaitlistModal from "../components/JoinWaitlistModal"; // Corrected import path
 
 export default function Navbar() {
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [waitlistModalOpen, setWaitlistModalOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleOpenWaitlistModal = () => {
+    setWaitlistModalOpen(true);
+  };
+
+  const handleCloseWaitlistModal = () => {
+    setWaitlistModalOpen(false);
+  };
   const navLinks = [
     { name: "Plans & Pricing", path: "/plans" },
     { name: "Teach on 99 Academy", path: "/" },
@@ -96,7 +105,7 @@ export default function Navbar() {
             Log in
           </Button>
         </ListItem>
-        <ListItem sx={{ justifyContent: "center" }}>
+        <ListItem sx={{ justifyContent: "center", }}>
           <Button
             variant="contained"
             sx={{
@@ -111,7 +120,7 @@ export default function Navbar() {
                 backgroundColor: "#404040",
               },
             }}
-            onClick={() => router.push("/")} // Fixed: Now pushes to waitlist page
+            onClick={handleOpenWaitlistModal} // Fixed: Now pushes to waitlist page
           >
             Join waitlist
           </Button>
@@ -121,6 +130,7 @@ export default function Navbar() {
   );
 
   return (
+    <>
     <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 4, md: 1.9 } }}>
       <AppBar
         position="static"
@@ -224,7 +234,7 @@ export default function Navbar() {
                   backgroundColor: "#404040",
                 },
               }}
-              onClick={() => router.push("/")} // Fixed: Now pushes to waitlist page
+              onClick={handleOpenWaitlistModal} // Fixed: Now pushes to waitlist page
             >
               Join waitlist
             </Button>
@@ -260,5 +270,10 @@ export default function Navbar() {
         </Drawer>
       </AppBar>
     </Container>
+    <JoinWaitlistModal 
+    open={waitlistModalOpen} 
+    onClose={handleCloseWaitlistModal} 
+  />
+  </>
   );
 }

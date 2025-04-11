@@ -9,17 +9,26 @@ import {
   Button,
   InputBase,
 } from "@mui/material";
+import JoinWaitlistModal from "../components/JoinWaitlistModal"; // Corrected import path
 
 export default function FashionWaitlistSection() {
   const [email, setEmail] = useState("");
+  const [waitlistModalOpen, setWaitlistModalOpen] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email submitted:", email);
     // Add your waitlist signup logic here
   };
+const handleOpenWaitlistModal = () => {
+    setWaitlistModalOpen(true);
+  };
 
+  const handleCloseWaitlistModal = () => {
+    setWaitlistModalOpen(false);
+  };
   return (
+    <>
     <Box
       sx={{
         width: "100%",
@@ -121,6 +130,7 @@ export default function FashionWaitlistSection() {
             />
             <Button
               type="submit"
+              onClick={handleOpenWaitlistModal}
               sx={{
                 backgroundColor: "#352F36",
                 color: "white",
@@ -144,5 +154,10 @@ export default function FashionWaitlistSection() {
         </Box>
       </Container>
     </Box>
+    <JoinWaitlistModal 
+    open={waitlistModalOpen} 
+    onClose={handleCloseWaitlistModal} 
+  />
+  </>
   );
 }

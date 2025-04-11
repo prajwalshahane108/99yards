@@ -1,10 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, Container, Grid, Button } from "@mui/material";
 import Image from "next/image";
+import JoinWaitlistModal from "../components/JoinWaitlistModal"; // Corrected import path
 
 export default function FashionCTABanner() {
+  const [waitlistModalOpen, setWaitlistModalOpen] = useState(false);
+
+  const handleOpenWaitlistModal = () => {
+    setWaitlistModalOpen(true);
+  };
+
+  const handleCloseWaitlistModal = () => {
+    setWaitlistModalOpen(false);
+  };
   return (
     <Box
       sx={{
@@ -90,6 +100,7 @@ export default function FashionCTABanner() {
                 Academy today.
               </Typography>
               <Button
+              onClick={handleOpenWaitlistModal} // Fixed: Now pushes to waitlist page
                 variant="contained"
                 sx={{
                   backgroundColor: "#352F36",
@@ -109,6 +120,10 @@ export default function FashionCTABanner() {
           </Grid>
         </Grid>
       </Container>
+      <JoinWaitlistModal 
+    open={waitlistModalOpen} 
+    onClose={handleCloseWaitlistModal} 
+  />
     </Box>
   );
 }
