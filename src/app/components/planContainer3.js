@@ -449,7 +449,7 @@ export default function PlanContainer3({ billingCycle }) {
         py: 1,
         borderRadius: "8px"
       }}>
-        <Typography sx={{ fontWeight: 600 }}>
+        <Typography sx={{ fontWeight: 600, color: "#352f36" }}>
           {billingCycle === 'monthly' ? 'Monthly' : 'Yearly'} Plan
           {billingCycle === 'yearly' && (
             <Typography 
@@ -461,7 +461,7 @@ export default function PlanContainer3({ billingCycle }) {
                 fontSize: "0.8rem"
               }}
             >
-              (with yearly bonuses)
+              
             </Typography>
           )}
         </Typography>
@@ -515,7 +515,7 @@ export default function PlanContainer3({ billingCycle }) {
                       borderRadius: "4px"
                     }}
                   >
-                    Yearly Bonus
+                   
                   </Typography>
                 )}
               </Typography>
@@ -552,7 +552,7 @@ export default function PlanContainer3({ billingCycle }) {
                     justifyContent: 'center', 
                     alignItems: 'center',
                     backgroundColor: '#fff', 
-                    width: '40px', 
+                    width: '90px', 
                     height: '40px',
                     mr: 1,
                     borderRadius: '4px',

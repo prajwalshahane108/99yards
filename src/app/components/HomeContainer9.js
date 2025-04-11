@@ -9,9 +9,15 @@ import {
   Card,
   CardContent,
   Avatar,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 
 export default function TestimonialsSection() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+
   const testimonials = [
     {
       quote:
@@ -34,26 +40,26 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <Box sx={{ py: 6, backgroundColor: "#2d2b2e" }}>
-      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 4, md: 4 } }}>
+    <Box sx={{ py: { xs: 4, sm: 5, md: 6 }, px: { xs: 4, sm: 5, md: 6 }, backgroundColor: "#2d2b2e" }}>
+      <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
         <Typography
           variant="h2"
           component="h2"
           sx={{
             fontWeight: 700,
-            mb: 5,
+            mb: { xs: 3, sm: 4, md: 3 },
             color: "white",
-            textAlign: "left",
-            fontSize: { xs: "2rem", md: "3rem" },
-            minWidth: "1200px",
+            textAlign: { xs: "center", sm: "center" },
+            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "3rem" },
+            width: "100%",
           }}
         >
           Discover How 99 Yards Academy Changed Their Lives
         </Typography>
 
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={{ xs: 2, sm: 2, md: 3 }} justifyContent="center">
           {testimonials.map((testimonial, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid item xs={12} sm={6} md={4} key={index}>
               <Card
                 sx={{
                   height: "100%",
@@ -63,24 +69,24 @@ export default function TestimonialsSection() {
                   flexDirection: "column",
                 }}
               >
-                <CardContent sx={{ p: 3 }}>
+                <CardContent sx={{ p: { xs: 2, sm: 2.5, md: 3 } }}>
                   <Typography
                     variant="body1"
                     sx={{
-                      mb: 4,
+                      mb: { xs: 2.5, sm: 3, md: 4 },
                       color: "#352F36",
-                      fontSize: "1rem",
+                      fontSize: { xs: "0.875rem", sm: "0.9375rem", md: "1rem" },
                       fontWeight: 400,
                     }}
                   >
-                    &quot;{testimonial.quote}&quot;{" "}
+                    &quot;{testimonial.quote}&quot;
                   </Typography>
 
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Avatar
                       sx={{
-                        width: 56,
-                        height: 56,
+                        width: { xs: 40, sm: 48, md: 56 },
+                        height: { xs: 40, sm: 48, md: 56 },
                         bgcolor: "#e0e0e0",
                         mr: 2,
                       }}
@@ -91,6 +97,7 @@ export default function TestimonialsSection() {
                         sx={{
                           fontWeight: 600,
                           color: "#333",
+                          fontSize: { xs: "0.875rem", sm: "1rem" },
                         }}
                       >
                         {testimonial.name}
@@ -99,6 +106,7 @@ export default function TestimonialsSection() {
                         variant="body2"
                         sx={{
                           color: "#555",
+                          fontSize: { xs: "0.75rem", sm: "0.8125rem", md: "0.875rem" },
                         }}
                       >
                         {testimonial.title}
